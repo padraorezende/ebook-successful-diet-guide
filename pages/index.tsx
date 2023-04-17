@@ -1,124 +1,187 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import { Card } from '@/components/Card/Card';
+import { Question } from '@/components/Question/Question';
+import { Title } from '@/components/Title/Title';
+import { faCheck, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Amatic_SC } from 'next/font/google';
+import Head from 'next/head';
+import { useState } from 'react';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Amatic_SC({
+  weight: ['400', '700'],
+  style: ['normal'],
+  subsets: ['latin'],
+})
+
 
 export default function Home() {
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
+      <Head>
+        <title>O guia ideal para uma dieta de sucesso</title>
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+
+      <header className="w-full shadow-md">
+        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-center md:text-left mb-2 md:mb-0">
+            <h1 className={`text-3xl font-bold leading-tight ${inter.className}`} >
+              O GUIA IDEAL PARA UMA DIETA DE SUCESSO:
+            </h1>
+            <div className="flex">
+              <h2 className={`text-xl font-bold leading-tight ${inter.className}`} >
+                Saiba como alcançar seus objetivos
+              </h2>
+              <img src="/images/objective.png" alt="Stripe" className="w-8 ml-2" />
+            </div>
+          </div>
+          <a href="#" className="text-blue-600 hover:text-blue-800 font-medium">
+            Ver outros produtos
           </a>
+        </div>
+      </header>
+
+
+      <div className="py-12 h-full flex-col text-center">
+        <h2 className="text-xl font-semibold text-gray-800 mb-8">
+          Aprenda a alcançar seus objetivos com o nosso guia completo
+        </h2>
+
+        <div className="flex flex-row md:flex-col items-center justify-center mb-8">
+          <div className="md:w-1/2 mr-4">
+            <video className="rounded-lg shadow-lg mx-auto" controls autoPlay>
+              <source src="/videos/ebook.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div className="md:w-1/2 mt-8 mr-4 flex flex-col">
+            <button className="py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg shadow-lg font-medium">
+              Finalizar minha Compra
+            </button>
+            <div className="flex flex-row mt-4 items-center justify-center">
+              <img src="/images/visa.png" alt="Visa" className="w-8 mr-4" />
+              <img src="/images/mastercard.png" alt="Mastercard" className="w-8 mr-4" />
+              <img src="/images/paypal.png" alt="PayPal" className="w-8 mr-4" />
+              <img src="/images/elo.png" alt="Stripe" className="w-8 mr-4" />
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-gray-200 py-12">
+          <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+            O que você vai aprender com o nosso guia de nutrição:
+          </h3>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-center">
+
+            <div className="w-full md:w-1/4 px-4 mb-4 md:mb-0">
+              <img src="/images/ebook.png" alt="Guia de Nutrição" className="w-[500px]" />
+            </div>
+
+            <div className="w-full px-4 md:w-3/4">
+              <div className="text-gray-700">
+                <Title description="Por que uma dieta é importante para sua saúde e bem-estar" />
+                <Title description="Definindo seus objetivos: como definir metas realistas para sua dieta" />
+                <Title description="Fazendo escolhas alimentares saudáveis: como escolher alimentos nutritivos e balanceados" />
+                <Title description="Planejando suas refeições: como elaborar um plano de alimentação semanal" />
+                <Title description="Gerenciando seus desejos alimentares: estratégias para evitar compulsões alimentares!" />
+                <Title description="Suplementos alimentares: quais suplementos podem ajudar a apoiar sua dieta" />
+                <Title description="Mantendo a motivação: como lidar com os obstáculos e manter o compromisso com sua dieta" />
+                <Title description="Conclusão: como manter uma dieta saudável a longo prazo e alcançar seus objetivos de saúde e bem-estar" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto py-12">
+          <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+            O que nossos clientes estão dizendo:
+          </h3>
+
+          <div className="flex flex-col md:flex-row items-center justify-center">
+            <Card description='O guia de nutrição me ajudou a entender melhor como escolher os alimentos certos para cada refeição, e as receitas são incríveis!' location='São Paulo' name='João Silva' />
+            <Card description='Esse guia é incrível! As dicas práticas me ajudaram a montar meu cardápio semanal de forma equilibrada e variada.' location='Curitiba' name='Roberto Ferreira' />
+            <Card description='Com o guia de nutrição, aprendi a importância de cada grupo alimentar e como combiná-los para uma dieta saudável e saborosa.' location='Recife' name='Camila Lima' />
+          </div>
+          <div className="flex flex-col md:flex-row items-center justify-center mt-4">
+            <Card description='Com o guia de nutrição, consegui alcançar meus objetivos de perda de peso de forma saudável e sem sacrifícios.' location='Rio de Janeiro' name='Maria Souza' />
+            <Card description='As informações do guia de nutrição são muito claras e objetivas, me ajudaram a desmistificar muitos mitos sobre alimentação.' location='Porto Alegre' name='Fernanda Oliveira' />
+          </div>
+
+        </div>
+
+        <div className="bg-gray-200 py-12">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+              <div className="md:w-1/2 flex justify-center">
+                <img src="/images/garantia.png" alt="Garantia de satisfação" className='w-[200px]' />
+              </div>
+              <div className="md:w-1/2 text-center md:text-left">
+                <p className="text-lg text-gray-700 mb-4 leading-7 text-justify">
+                  Nós estamos confiantes que você irá amar o nosso ebook, mas caso você não fique satisfeito com a sua compra, oferecemos uma garantia de devolução do dinheiro em até 7 dias após a compra.
+                </p>
+                <div className="flex justify-center md:justify-start items-center text-center">
+                  <FontAwesomeIcon icon={faCheck} className="text-green-500 mr-2 w-6" />
+                  <p className="text-gray-700 text-base leading-6">
+                    Sua satisfação é a nossa prioridade número um!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div className="max-w-5xl mx-auto py-12">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">Perguntas frequentes</h2>
+          <div className="grid grid-cols-2 gap-6">
+            <Question
+              question="Quais os maiores benefícios que o programa irá me proporcionar?"
+              answer="O programa proporciona mais qualidade de vida, disposição, melhora na pele, regulagem do intestino e perda de peso de forma saudável."
+            />
+
+            <Question
+              question="Meu dia é corrido e não tenho muito tempo. O programa vai me ajudar?"
+              answer="Sim. Temos diversas clientes que também possuem rotinas corridas e conseguiram alcançar excelentes resultados seguindo o nosso programa."
+            />
+
+            <Question
+              question="Tenho que pagar todos os meses para continuar participando?"
+              answer="Não. Você faz apenas um único pagamento e poderá participar do programa pelo tempo que quiser sem cobranças adicionais."
+            />
+
+            <Question
+              question="A partir do momento que eu compro, em quanto tempo eu recebo o conteúdo?"
+              answer="Você receberá o seu material imediatamente após a confirmação de sua compra, diretamente em seu email."
+            />
+
+            <div className="col-span-2">
+              <Question
+                question="Em quanto tempo eu posso começar a ver resultados?"
+                answer="Os resultados começam a aparecer logo nas primeiras semanas se você seguir o nosso passo a passo. Você notará que suas roupas começarão a ficar mais folgadas e você desinchará bastante."
+              />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <footer className="bg-gray-800 py-8 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between">
+            <div>
+              <p className={`text-gray-400 ${inter.className}`}>&copy; 2023 O GUIA IDEAL PARA UMA DIETA DE SUCESSO: SAIBA COMO ALCANÇAR SEUS OBJETIVOS</p>
+            </div>
+            <div>
+              <a href="#" className="text-gray-400 hover:text-gray-300 mr-4">
+                Política de Privacidade
+              </a>
+              <a href="#" className="text-gray-400 hover:text-gray-300">
+                Termos de Uso
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div >
   )
-}
+} 
