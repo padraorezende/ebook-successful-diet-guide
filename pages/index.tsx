@@ -29,14 +29,14 @@ export default function Home() {
             <h1 className={`text-3xl font-bold leading-tight ${inter.className}`} >
               O GUIA IDEAL PARA UMA DIETA DE SUCESSO:
             </h1>
-            <div className="flex">
+            <div className="inline-flex items-center">
               <h2 className={`text-xl font-bold leading-tight ${inter.className}`} >
                 Saiba como alcançar seus objetivos
               </h2>
               <img src="/images/objective.png" alt="Stripe" className="w-8 ml-2" />
             </div>
           </div>
-          <a href="#" className="text-blue-600 hover:text-blue-800 font-medium">
+          <a href="#" className="text-blue-600 hover:text-blue-800 font-medium hidden sm:block">
             Ver outros produtos
           </a>
         </div>
@@ -121,7 +121,7 @@ export default function Home() {
                 <div className="flex justify-center md:justify-start items-center text-center">
                   <FontAwesomeIcon icon={faCheck} className="text-green-500 mr-2 w-6" />
                   <p className="text-gray-700 text-base leading-6">
-                    Sua satisfação é a nossa prioridade número um!
+                    Nossa principal prioridade é a sua satisfação!
                   </p>
                 </div>
               </div>
