@@ -11,10 +11,12 @@ export const Question = (props: QuestionProps) => {
     const [showAnswer, setShowAnswer] = useState(true);
 
     return (
-        <div className="flex-col bg-white shadow-lg rounded-lg p-4 my-4">
+        <div className="flex-col bg-white shadow-lg rounded-lg p-4 my-4 mx-2">
             <div className="flex justify-between items-start question rounded-lg px-4 py-2 cursor-pointer transition-colors duration-200" onClick={() => setShowAnswer(!showAnswer)}>
                 <p className="text-lg  text-gray-900 mb-2">{props.question}</p>
-                <FontAwesomeIcon icon={showAnswer ? faChevronUp : faChevronDown} className="text-gray-600 h-4 w-4 transition-transform" />
+                <div className="flex justify-center items-center">
+                    <FontAwesomeIcon icon={showAnswer ? faChevronUp : faChevronDown} className="text-gray-400 h-4 w-4 ml-2 transition-transform" />
+                </div>
             </div>
             {showAnswer &&
                 <>

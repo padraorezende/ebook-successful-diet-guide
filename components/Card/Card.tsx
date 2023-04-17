@@ -7,7 +7,7 @@ export type CardProps = {
 
 export const Card = (props: CardProps) => {
   return (
-    <div className="md:w-1/3 mr-4 mb-4 md:mb-0">
+    <div className="md:w-1/3 mx-2 mb-4 md:mb-0">
       <div className="bg-white rounded-lg shadow-lg p-6">
         <p className="text-gray-700 mb-4">
           {props.description}

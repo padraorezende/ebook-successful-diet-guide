@@ -42,19 +42,18 @@ export default function Home() {
         </div>
       </header>
 
-
       <div className="py-12 h-full flex-col text-center">
         <h2 className="text-xl font-semibold text-gray-800 mb-8">
           Aprenda a alcançar seus objetivos com o nosso guia completo
         </h2>
 
-        <div className="flex flex-row md:flex-col items-center justify-center mb-8">
-          <div className="md:w-1/2 mr-4">
+        <div className="flex flex-col items-center justify-center mb-8">
+          <div className="md:w-1/2 mx-2">
             <video className="rounded-lg shadow-lg mx-auto" controls autoPlay>
               <source src="/videos/ebook.mp4" type="video/mp4" />
             </video>
           </div>
-          <div className="md:w-1/2 mt-8 mr-4 flex flex-col">
+          <div className="md:w-1/2 mt-8 mx-2 flex flex-col">
             <button className="py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg shadow-lg font-medium">
               Finalizar minha Compra
             </button>
@@ -115,7 +114,7 @@ export default function Home() {
               <div className="md:w-1/2 flex justify-center">
                 <img src="/images/garantia.png" alt="Garantia de satisfação" className='w-[200px]' />
               </div>
-              <div className="md:w-1/2 text-center md:text-left">
+              <div className="md:w-1/2 text-center md:text-left mx-4">
                 <p className="text-lg text-gray-700 mb-4 leading-7 text-justify">
                   Nós estamos confiantes que você irá amar o nosso ebook, mas caso você não fique satisfeito com a sua compra, oferecemos uma garantia de devolução do dinheiro em até 7 dias após a compra.
                 </p>
@@ -130,10 +129,9 @@ export default function Home() {
           </div>
         </div>
 
-
         <div className="max-w-5xl mx-auto py-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Perguntas frequentes</h2>
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6 grid-cols-1">
             <Question
               question="Quais os maiores benefícios que o programa irá me proporcionar?"
               answer="O programa proporciona mais qualidade de vida, disposição, melhora na pele, regulagem do intestino e perda de peso de forma saudável."
@@ -154,7 +152,7 @@ export default function Home() {
               answer="Você receberá o seu material imediatamente após a confirmação de sua compra, diretamente em seu email."
             />
 
-            <div className="col-span-2">
+            <div className="sm:col-span-2 col-span-1">
               <Question
                 question="Em quanto tempo eu posso começar a ver resultados?"
                 answer="Os resultados começam a aparecer logo nas primeiras semanas se você seguir o nosso passo a passo. Você notará que suas roupas começarão a ficar mais folgadas e você desinchará bastante."
@@ -166,22 +164,21 @@ export default function Home() {
 
       <footer className="bg-gray-800 py-8 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between">
-            <div>
-              <p className={`text-gray-400 ${inter.className}`}>&copy; 2023 O GUIA IDEAL PARA UMA DIETA DE SUCESSO: SAIBA COMO ALCANÇAR SEUS OBJETIVOS</p>
+          <div className="flex flex-col md:flex-row justify-between">
+            <div className="flex justify-center md:justify-center md:w-1/2">
+              <p className={`text-gray-400 text-center ${inter.className}`}>&copy; 2023 O GUIA IDEAL PARA UMA DIETA DE SUCESSO: SAIBA COMO ALCANÇAR SEUS OBJETIVOS</p>
             </div>
-            <div>
-              <a href="#" className="text-gray-400 hover:text-gray-300 mr-4">
+            <div className="flex justify-center md:justify-end md:w-1/2 mt-4 md:mt-0">
+              <a href="#" className="text-gray-400 hover:text-gray-300 mx-2">
                 Política de Privacidade
               </a>
-              <a href="#" className="text-gray-400 hover:text-gray-300">
+              <a href="#" className="text-gray-400 hover:text-gray-300 mx-2">
                 Termos de Uso
               </a>
             </div>
           </div>
         </div>
       </footer>
-
     </div >
   )
 } 
