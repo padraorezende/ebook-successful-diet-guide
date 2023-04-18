@@ -21,7 +21,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
 
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=UA-242635454-1%22%3E"
+        src="https://www.googletagmanager.com/gtag/js?id=G-LQM5WKNBEW%22%3E"
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -30,10 +30,10 @@ export default function Home() {
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'UA-242635454-1');
+          gtag('config', 'G-LQM5WKNBEW');
         `}
       </Script>
-      
+
       <Head>
         <title>O guia ideal para uma dieta de sucesso</title>
         <link rel="icon" href="/favicon.png" />
