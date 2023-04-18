@@ -5,6 +5,7 @@ import { faCheck, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Amatic_SC } from 'next/font/google';
 import Head from 'next/head';
+import Script from 'next/script';
 import { useState } from 'react';
 
 const inter = Amatic_SC({
@@ -18,6 +19,21 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
+
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=UA-242635454-1%22%3E"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-242635454-1');
+        `}
+      </Script>
+      
       <Head>
         <title>O guia ideal para uma dieta de sucesso</title>
         <link rel="icon" href="/favicon.png" />
